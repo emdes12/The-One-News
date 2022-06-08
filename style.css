@@ -196,6 +196,7 @@ aside {
     display: grid;
     justify-content: center;
     position: relative;
+    overflow: hidden;
 }
 
 .about::before {
