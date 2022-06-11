@@ -84,8 +84,52 @@ sourceNews()
 
 
 function changeRegion(region) {
-    country = region;
-    sourceNews()
+    newsList.innerHTML = "";
+fetch('https://api.currentsapi.services/v1/latest-news?country='+ region +'&apiKey=MiAFjxEMKgrSf-9BMrBQ6Y35GAYLwqqMr7nZUHr-WodSUSx0')
+    .then(response => {
+        return response.json();
+    })
+    .then(response => {
+
+        for (let i = 0; i < 10; i++) {
+            newsList.innerHTML += `<li class="news-list">
+                <a href="${response.news[i].url}" target="_blank"><img loading="lazy" src="${response.news[i].image}" alt="${response.news[i].title}">
+
+                <div class="news-details">
+                    <div class="news-title">${response.news[i].title}</div>
+                    <div class="time">
+                    ${response.news[i].published}
+                    </div>
+
+                    <div class="source">Source: <span>${response.news[i].author}</span></div>
+                </div></a>
+            </li>
+        `
+
+        }
+        
+    })
+
+fetch('https://api.currentsapi.services/v1/latest-news?country='+ region +'&apiKey=MiAFjxEMKgrSf-9BMrBQ6Y35GAYLwqqMr7nZUHr-WodSUSx0')
+    .then(response => {
+        return response.json();
+    })
+    .then(response => {
+
+        for (let i = 10; i < 23; i++) {
+            otherNews.innerHTML += `<li class="recent-list">
+                <a href="${response.news[i].url}" target="_blank"><img src="${response.news[i].image}" alt="${response.news[i].title}">
+
+                <div class="news-recent">
+                    <div class="recent-title">${response.news[i].title}</div>
+
+                    <div class="source">Source: <span>${response.news[i].author}</span></div>
+                </div></a>
+            </li>
+        `
+
+        }
+    })
     console.log(region)
 }
 
