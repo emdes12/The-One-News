@@ -13,6 +13,10 @@ a {
     text-decoration: none;
 }
 
+img {
+    font-family: 'Libre Franklin';
+}
+
 body {
     font-family: 'Franklin Gothic Medium', 'Franklin Gothic Book', 'Libre Franklin', 'Arial Narrow', Arial, sans-serif;
     color: #201E1E;
