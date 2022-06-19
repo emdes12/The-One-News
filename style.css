@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@500;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@800&display=swap');
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -12,7 +14,7 @@ a {
 }
 
 body {
-    font-family: 'Franklin Gothic Medium', 'Franklin Gothic Book', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Franklin Gothic Book', 'Libre Franklin', 'Arial Narrow', Arial, sans-serif;
     color: #201E1E;
     padding: 110px 0 0 0;
 }
