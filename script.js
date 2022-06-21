@@ -83,7 +83,7 @@ fetch('https://api.currentsapi.services/v1/latest-news?country='+ country +'&api
 //changing the region(country)
 
 
-function changeRegion(region = us) {
+function changeRegion(region = "us") {
     sourceNews(region)
     console.log(region)
 }
