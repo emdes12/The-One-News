@@ -28,7 +28,7 @@ const worldNews = document.querySelector('.world-news')
 
 //https://newsapi.org/v2/top-headlines?country=ng&apiKey=1d199936d6f74336847f277033333a1d
 
-let country = 'ng';
+let country = 'us';
 function sourceNews () {
 fetch('https://api.currentsapi.services/v1/latest-news?country='+ country +'&apiKey=MiAFjxEMKgrSf-9BMrBQ6Y35GAYLwqqMr7nZUHr-WodSUSx0')
     .then(response => {
