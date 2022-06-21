@@ -28,8 +28,8 @@ const worldNews = document.querySelector('.world-news')
 
 //https://newsapi.org/v2/top-headlines?country=ng&apiKey=1d199936d6f74336847f277033333a1d
 
-let country = 'us';
-function sourceNews () {
+
+function sourceNews (country) {
 fetch('https://api.currentsapi.services/v1/latest-news?country='+ country +'&apiKey=MiAFjxEMKgrSf-9BMrBQ6Y35GAYLwqqMr7nZUHr-WodSUSx0')
     .then(response => {
         return response.json();
@@ -83,53 +83,8 @@ fetch('https://api.currentsapi.services/v1/latest-news?country='+ country +'&api
 //changing the region(country)
 
 
-function changeRegion(region) {
-    newsList.innerHTML = "";
-fetch('https://api.currentsapi.services/v1/latest-news?country='+ region +'&apiKey=MiAFjxEMKgrSf-9BMrBQ6Y35GAYLwqqMr7nZUHr-WodSUSx0')
-    .then(response => {
-        return response.json();
-    })
-    .then(response => {
-
-        for (let i = 0; i < 10; i++) {
-            newsList.innerHTML += `<li class="news-list">
-                <a href="${response.news[i].url}" target="_blank"><img loading="lazy" src="${response.news[i].image}" alt="${response.news[i].title}">
-
-                <div class="news-details">
-                    <div class="news-title">${response.news[i].title}</div>
-                    <div class="time">
-                    ${response.news[i].published}
-                    </div>
-
-                    <div class="source">Source: <span>${response.news[i].author}</span></div>
-                </div></a>
-            </li>
-        `
-
-        }
-        
-    })
-
-fetch('https://api.currentsapi.services/v1/latest-news?country='+ region +'&apiKey=MiAFjxEMKgrSf-9BMrBQ6Y35GAYLwqqMr7nZUHr-WodSUSx0')
-    .then(response => {
-        return response.json();
-    })
-    .then(response => {
-
-        for (let i = 10; i < 23; i++) {
-            otherNews.innerHTML += `<li class="recent-list">
-                <a href="${response.news[i].url}" target="_blank"><img src="${response.news[i].image}" alt="${response.news[i].title}">
-
-                <div class="news-recent">
-                    <div class="recent-title">${response.news[i].title}</div>
-
-                    <div class="source">Source: <span>${response.news[i].author}</span></div>
-                </div></a>
-            </li>
-        `
-
-        }
-    })
+function changeRegion(region = us) {
+    sourceNews(region)
     console.log(region)
 }
 
@@ -180,4 +135,4 @@ function slideImage (move) {
         nextBtn.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
     }
 }
-sourceNews()
+changeRegion()
