@@ -77,7 +77,7 @@ fetch('https://api.currentsapi.services/v1/latest-news?country='+ country +'&api
     })
 }
 
-sourceNews()
+
 //end of getting news
 
 //changing the region(country)
@@ -180,3 +180,4 @@ function slideImage (move) {
         nextBtn.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
     }
 }
+sourceNews()
