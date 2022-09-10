@@ -84,7 +84,10 @@ fetch('https://api.currentsapi.services/v1/latest-news?country='+ country +'&api
 
 
 function changeRegion(region = "ng") {
-    sourceNews(region)
+    let contri = region;
+    let fnChNews = sourceNews(contri);
+
+    setInterval(fnChNews, 3000);
     console.log(region)
 }
 
