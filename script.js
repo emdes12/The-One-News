@@ -138,4 +138,4 @@ function slideImage (move) {
         nextBtn.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
     }
 }
-changeRegion()
+//changeRegion()
