@@ -31,8 +31,9 @@ const worldNews = document.querySelector('.world-news')
 
 function sourceNews (country) {
 fetch('https://api.currentsapi.services/v1/latest-news?country='+ country +'&apiKey=MiAFjxEMKgrSf-9BMrBQ6Y35GAYLwqqMr7nZUHr-WodSUSx0')
-    .then(response => {
-        return response.json();
+    .then(async response => {
+        let res = await response.json();
+        return res;
     })
     .then(response => {
 
@@ -90,6 +91,7 @@ function changeRegion(region = "ng") {
     setInterval(fnChNews, 3000);
     console.log(region)
 }
+changeRegion()
 
 //changing region ends
 
