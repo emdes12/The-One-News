@@ -84,7 +84,7 @@ sourceNews("ng");
 //changing the region(country)
 const selectEl = document.getElementById("country-select");
 
-selectEl.addEventListener("click", function () {
+selectEl.addEventListener("change", function () {
   let newContri = this.value;
   sourceNews(newContri);
 
