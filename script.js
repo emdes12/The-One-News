@@ -58,8 +58,9 @@ function sourceNews(country) {
       country +
       "&apiKey=MiAFjxEMKgrSf-9BMrBQ6Y35GAYLwqqMr7nZUHr-WodSUSx0"
   )
-    .then((response) => {
-      return response.json();
+    .then(async (response) => {
+      let resp = await response.json();
+      return resp;
     })
     .then((response) => {
       for (let i = 10; i < 23; i++) {
